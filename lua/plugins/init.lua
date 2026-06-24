@@ -32,6 +32,7 @@ local themes = {
   { "Everblush/everblush.vim" },
   { "Mofiqul/vscode.nvim" },
   { "kvrohit/substrata.nvim" },
+  { "felipeagc/fleet-theme-nvim" },
   "aizen"
 }
 
