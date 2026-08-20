@@ -155,6 +155,9 @@ set({ "n", "x", "o" }, ';', function()
   })
 end, { desc = "Flash" })
 
+-- CCC
+set("n", "<leader>cp", "<cmd>CccPick<cr>", { desc = "Pick color" })
+
 -- Hover (lazy)
 -- See: plugins.config.hover
 

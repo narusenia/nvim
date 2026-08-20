@@ -75,6 +75,8 @@ now(function()
       end,
     },
   })
+  add({ source = "folke/snacks.nvim" })
+  require("snacks").setup({})
 end)
 --#endregion
 
@@ -281,6 +283,9 @@ do
     prefix = "»",
   }
 
+  add({ source = "uga-rosa/ccc.nvim" })
+  c.load_conf("ccc")
+
   add({ source = "jghauser/mkdir.nvim" })
   add({ source = "nacro90/numb.nvim" })
   add({ source = "JoosepAlviste/nvim-ts-context-commentstring" })
@@ -304,6 +309,21 @@ do
     }
   })
   require("gradle").setup {}
+
+  add({
+    source = "3rd/image.nvim",
+    depends = {
+      "nvim-treesitter/nvim-treesitter",
+      "leafo/magick"
+    }
+  })
+  -- add({
+  --   source = "3rd/diagram.nvim",
+  --   depends = {
+  --     "3rd/image.nvim",
+  --   }
+  -- })
+  c.load_conf("images")
 end
 --#endregion
 
@@ -314,7 +334,6 @@ do
     depends = { "nvim-tree/nvim-web-devicons" },
   })
   c.load_conf("lualine")
-
 
   add({ source = "akinsho/toggleterm.nvim" })
   c.load_conf("toggleterm")
@@ -341,9 +360,16 @@ do
     c.load_conf("bufferin")
   end)
 
-  add({ source = "MeanderingProgrammer/render-markdown.nvim" })
-  require('render-markdown').setup({
-    completions = { lsp = { enabled = true } },
+  -- add({ source = "MeanderingProgrammer/render-markdown.nvim" })
+  -- require('render-markdown').setup({
+  --   completions = { lsp = { enabled = true } },
+  -- })
+  add({
+    source = "delphinus/md-render.nvim",
+    depends = {
+      "nvim-tree/nvim-web-devicons", -- optional
+      "delphinus/budoux.lua",        -- optional
+    },
   })
   add({ source = "sitiom/nvim-numbertoggle" })
   add({ source = "SmiteshP/nvim-navic", depends = { "neovim/nvim-lspconfig" } })
@@ -380,5 +406,16 @@ do
     add({ source = "j-hui/fidget.nvim" })
     require("fidget").setup {}
   end
+
+  add({
+    source = 'brianhuster/live-preview.nvim',
+    depends = {
+      -- You can choose one of the following pickers
+      'nvim-telescope/telescope.nvim',
+      'ibhagwan/fzf-lua',
+      'echasnovski/mini.pick',
+      'folke/snacks.nvim',
+    },
+  })
 end
 --#endregion
