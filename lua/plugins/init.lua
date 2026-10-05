@@ -242,11 +242,11 @@ end
 
 --#region VCS
 do
-  add({ source = "kdheepakglazygit.nvim" })
+  add({ source = "kdheepakg/lazygit.nvim" })
   add({ source = "sindrets/diffview.nvim" })
   add({ source = "yannvanhalewyn/jujutsu.nvim" })
   do
-    require("jujutsu.nvim").setup {
+    require("jujutsu-nvim").setup {
       diff_preset = "diffview"
     }
   end
