@@ -120,6 +120,9 @@ now(function()
 
   add({ source = "mrcjkb/rustaceanvim" })
   add({ source = "NaruseNia/valen.nvim" })
+  -- minewell: filetype・tree-sitter ハイライト・mwl lsp の診断。
+  -- parser は初回に自分でビルドするので、ビルドフックは要らない
+  add({ source = "narusenia/minewell-nvim" })
   add({
     source = "nvim-treesitter/nvim-treesitter-context",
     depends = { "nvim-treesitter/nvim-treesitter" }
@@ -237,10 +240,15 @@ do
 end
 --#endregion
 
---#region Git
+--#region VCS
 do
-  add({ source = "kdheepak/lazygit.nvim" })
+  add({ source = "kdheepakglazygit.nvim" })
   add({ source = "sindrets/diffview.nvim" })
+  add({ source = "yannvanhalewyn/jujutsu.nvim" })
+  do
+    require("jujutsu.nvim").setup {
+      diff_preset = "diffview"
+    }
 end
 --#endregion
 
