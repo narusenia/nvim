@@ -55,7 +55,6 @@ later(function()
   require("mini.ai").setup()
   require("mini.comment").setup()
   require("mini.pairs").setup()
-  require("mini.pick").setup()
 end)
 --#endregion
 
@@ -82,28 +81,9 @@ end)
 
 --#region LSP/Treesitter
 now(function()
-  add({
-    source = "williamboman/mason.nvim",
-    hooks = {
-      post_checkout = function()
-        vim.cmd("MasonUpdate")
-      end,
-    },
-  })
-  add({
-    source = "williamboman/mason-lspconfig.nvim",
-    hooks = {
-      post = function()
-        vim.cmd("MasonUpdate")
-      end,
-    },
-  })
+  add({ source = "mason-org/mason.nvim" })
+  add({ source = "mason-org/mason-lspconfig.nvim" })
   c.load_conf("lsp")
-  add({
-    source = "nvimtools/none-ls.nvim",
-    depends = { "nvim-lua/plenary.nvim" },
-  })
-  add({ source = "jay-babu/mason-null-ls.nvim" })
   add({ source = "onsails/lspkind.nvim" })
   c.load_conf("lspkind")
 
@@ -328,12 +308,6 @@ do
       "leafo/magick"
     }
   })
-  -- add({
-  --   source = "3rd/diagram.nvim",
-  --   depends = {
-  --     "3rd/image.nvim",
-  --   }
-  -- })
   c.load_conf("images")
 end
 --#endregion
@@ -371,10 +345,6 @@ do
     c.load_conf("bufferin")
   end)
 
-  -- add({ source = "MeanderingProgrammer/render-markdown.nvim" })
-  -- require('render-markdown').setup({
-  --   completions = { lsp = { enabled = true } },
-  -- })
   add({
     source = "delphinus/md-render.nvim",
     depends = {
@@ -383,7 +353,6 @@ do
     },
   })
   add({ source = "sitiom/nvim-numbertoggle" })
-  add({ source = "SmiteshP/nvim-navic", depends = { "neovim/nvim-lspconfig" } })
 
   do
     add({ source = "b0o/incline.nvim" })

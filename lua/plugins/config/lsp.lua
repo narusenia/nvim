@@ -9,7 +9,6 @@ require("mason-lspconfig").setup({
     "vtsls",
     "vue_ls",
   },
-  automatic_installation = true,
 })
 
 vim.lsp.config("vtsls", {
