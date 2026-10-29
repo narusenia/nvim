@@ -305,6 +305,8 @@ do
     source = "SmiteshP/nvim-navic",
     depends = { "neovim/nvim-lspconfig" },
   })
+  add({ source = "folke/trouble.nvim" })
+  require("trouble").setup {}
 end
 --#endregion
 
