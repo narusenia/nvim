@@ -12,7 +12,7 @@ vim.keymap.set("n", "<A-t>", ":ToggleTerm<CR>", { desc = "ToggleTerm" })
 vim.keymap.set("t", "<A-t>", "<C-\\><C-n>:ToggleTerm<CR>", { desc = "ToggleTerm in terminal mode" })
 vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<CR>", { desc = "ToggleTerm on float" })
 vim.keymap.set(
-	"n",
+	"t",
 	"<leader>tt",
 	"<C-\\><C-n>:ToggleTerm direction=float<CR>",
 	{ desc = "ToggleTerm on float in terminal mode" }
